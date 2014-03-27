@@ -1,8 +1,8 @@
 Etsydemo::Application.routes.draw do
   resources :listings
 
-  get "pages/about"
-  get "pages/contact"
+  get "about" => "pages/about"
+  get "contact" => "pages/contact"
 
   root 'listings#index'
   

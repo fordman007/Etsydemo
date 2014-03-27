@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 #commenting our sqlite3 out since we just added it below
-gem 'sqlite3', group: :development
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,14 +30,19 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Bootstrap sass gem
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.1.1.0'
 
 # Paperclip gem
 gem "paperclip", "~> 4.1"
 
-# heroku
-gem 'rails_12factor', group: :production
-gem 'pg', group: :production
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :production do
+ gem 'pg'
+ gem 'rails_12factor' 
+end 
 
 
 group :doc do
